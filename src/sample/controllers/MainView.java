@@ -34,7 +34,7 @@ public class MainView implements Initializable {
 
     public ComboBox candidateBox = new ComboBox();
     public BarChart<String, Integer> chartResult;
-    public MultichainAPI multichainAPI;
+    public MultichainConnection multichainConnection;
     public XYChart.Series series1 = new XYChart.Series();
     public final CategoryAxis xAxis = new CategoryAxis();
     public final NumberAxis yAxis = new NumberAxis();
@@ -54,7 +54,7 @@ public class MainView implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        multichainAPI = new MultichainAPI();
+        multichainConnection = new MultichainConnection();
 
         xAxis.setLabel("Kandydat");
         yAxis.setLabel("Ilość głosów");
@@ -77,13 +77,13 @@ public class MainView implements Initializable {
 
         int candidate = candidateBox.getSelectionModel().getSelectedIndex();
         System.out.println(candidate);
-        multichainAPI.addToChain("stream1", "key1", candidate);
+        multichainConnection.vote(candidate);
 
     }
 
     public void checkResult(ActionEvent actionEvent) {
 
-        MultichainConnection multichainConnection = new MultichainConnection();
+        
         Map<Integer, Long> counters = multichainConnection.getResults();
 
         series1 = new XYChart.Series();
