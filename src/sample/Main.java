@@ -9,12 +9,15 @@ import javafx.stage.Stage;
 import sample.controllers.MainView;
 
 public class Main extends Application {
+    public static Stage mainStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         AnchorPane myPane = (AnchorPane) FXMLLoader.load(getClass().getResource
-                ("controllers/fxml/MainView.fxml"));
+                ("controllers/fxml/LoginView.fxml"));
         Scene myScene = new Scene(myPane);
+
+        mainStage = primaryStage;
 
         primaryStage.setTitle("WawVote");
         primaryStage.setScene(myScene);
