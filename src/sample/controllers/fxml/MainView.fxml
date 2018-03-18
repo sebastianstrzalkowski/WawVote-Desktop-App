@@ -64,7 +64,7 @@
                         <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
                      </padding>
                      <children>
-                        <BarChart layoutY="9.0" prefHeight="302.0" prefWidth="858.0">
+                        <BarChart fx:id="chartResult" alternativeRowFillVisible="false" barGap="1.0" categoryGap="5.0" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutY="9.0" prefHeight="302.0" prefWidth="858.0" title="Wyniki głosowania" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -72,7 +72,7 @@
                             <NumberAxis side="LEFT" />
                           </yAxis>
                         </BarChart>
-                        <Button layoutX="373.0" layoutY="320.0" mnemonicParsing="false" text="Sprawdź wyniki" />
+                        <Button layoutX="373.0" layoutY="320.0" mnemonicParsing="false" onAction="#checkResult" text="Sprawdź wyniki" />
                      </children>
                   </AnchorPane>
             </content>
