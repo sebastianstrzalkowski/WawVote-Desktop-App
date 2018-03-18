@@ -51,7 +51,7 @@ public class ManualDataInputController {
     public void zapisz() throws IOException {
         if(waliduj()) {
             AnchorPane myPane = (AnchorPane) FXMLLoader.load(getClass().getResource
-                    ("./fxml/MainView.fxml"));
+                    ("fxml/MainView.fxml"));
             Scene myScene = new Scene(myPane);
 
             Main.mainStage.setScene(myScene);

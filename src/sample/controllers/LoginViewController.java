@@ -6,14 +6,16 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import sample.Main;
 
+import java.io.File;
 import java.io.IOException;
 
 public class LoginViewController {
 
     @FXML
     public void scan() throws IOException {
+        System.out.println(new File("").getPath());
         AnchorPane myPane = (AnchorPane) FXMLLoader.load(getClass().getResource
-                ("./fxml/MainView.fxml"));
+                ("fxml/MainView.fxml"));
         Scene myScene = new Scene(myPane);
 
         Main.mainStage.setScene(myScene);
@@ -22,7 +24,7 @@ public class LoginViewController {
     @FXML
     public void manual() throws IOException {
         AnchorPane myPane = (AnchorPane) FXMLLoader.load(getClass().getResource
-                ("./fxml/ManualDataInputView.fxml"));
+                ("fxml/ManualDataInputView.fxml"));
         Scene myScene = new Scene(myPane);
 
         Main.mainStage.setScene(myScene);

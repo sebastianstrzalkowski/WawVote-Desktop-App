@@ -23,7 +23,7 @@ public class MultichainConnection implements MultichainConnectionI {
 
     @Override
     public Map<Integer, Long> getResults() {
-        Map<Integer, Long> counters = api.getAllDataFromChain("stream1").stream()
+        Map<Integer, Long> counters = api.getAllDataFromChain(STREAM_NAME).stream()
                 .collect(Collectors.groupingBy(o -> o, Collectors.counting()));
 
         return counters;
