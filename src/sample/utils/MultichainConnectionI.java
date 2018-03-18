@@ -6,6 +6,6 @@ public interface MultichainConnectionI {
 
     void vote(Integer candidateId);
 
-    Map<Integer, Integer> getResults();
+    Map<Integer, Long> getResults();
 
 }
