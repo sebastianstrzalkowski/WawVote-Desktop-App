@@ -86,14 +86,16 @@ public class MainView implements Initializable {
         MultichainConnection multichainConnection = new MultichainConnection();
         Map<Integer, Long> counters = multichainConnection.getResults();
 
+        series1 = new XYChart.Series();
+
         System.out.println(counters);
         series1.setName("2018");
-        series1.getData().add(new XYChart.Data(candidateList.get(0), counters.get(0)));
-        series1.getData().add(new XYChart.Data(candidateList.get(1), counters.get(1)));
+        series1.getData().add(new XYChart.Data(candidateList.get(0), counters.containsKey(0)?counters.get(0):0));
+        series1.getData().add(new XYChart.Data(candidateList.get(1), counters.containsKey(1)?counters.get(1):0));
         series1.getData().add(new XYChart.Data(candidateList.get(2), counters.containsKey(2)?counters.get(2):0));
-        series1.getData().add(new XYChart.Data(candidateList.get(3), counters.get(3)));
-        series1.getData().add(new XYChart.Data(candidateList.get(4), counters.get(4)));
-        series1.getData().add(new XYChart.Data(candidateList.get(5), counters.get(5)));
+        series1.getData().add(new XYChart.Data(candidateList.get(3), counters.containsKey(3)?counters.get(3):0));
+        series1.getData().add(new XYChart.Data(candidateList.get(4), counters.containsKey(4)?counters.get(4):0));
+        series1.getData().add(new XYChart.Data(candidateList.get(5), counters.containsKey(5)?counters.get(5):0));
         chartResult.getData().setAll(series1);
     }
 }
