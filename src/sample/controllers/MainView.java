@@ -11,6 +11,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.ImageView;
@@ -20,6 +21,7 @@ import pl.waw.wawvote.utils.MultichainAPI;
 import sample.utils.MultichainConnection;
 import sample.utils.MultichainConnectionI;
 
+import javax.management.Notification;
 import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
@@ -79,11 +81,14 @@ public class MainView implements Initializable {
         System.out.println(candidate);
         multichainConnection.vote(candidate);
 
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Udało się zagłosować");
+        alert.showAndWait();
     }
 
     public void checkResult(ActionEvent actionEvent) {
 
-        
+
         Map<Integer, Long> counters = multichainConnection.getResults();
 
         series1 = new XYChart.Series();
